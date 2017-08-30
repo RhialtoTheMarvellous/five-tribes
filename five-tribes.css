@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+table {
+    /*border-collapse: collapse;*/
+}
+
+td {
+    height: 50px;
+    width:  50px;
+    border: 5px solid rgb(240, 240, 240);
+    border-radius: 15px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "vinque";
+    font-size: x-large;
+    color: white;
+}
+
+.red {
+    background-color: rgba(220, 20, 60, 0.7);
+}
+
+.blue {
+    background-color: rgba(65, 105, 225, 0.7);
+}
+
+.specialized-market, .workshop-se, .workshop-nw {
+    /*color: black;*/
+}
+
+td.workshop-se {
+    border-bottom-color: black;
+    border-right-color: black;
+}
+
+td.workshop-nw {
+    border-top-color: black;
+    border-left-color: black;
+}
+
+.chasm {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.great-lake {
+    background-color: rgba(135, 206, 235, 0.7);
+}
