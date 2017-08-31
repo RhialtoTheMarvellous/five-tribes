@@ -1,5 +1,14 @@
 body {
     background-color: rgb(240, 240, 240);
+    padding: 10px;
+}
+
+.expansions {
+    border: 1px dotted black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 600px;
+    margin-bottom: 10px;
 }
 
 table {

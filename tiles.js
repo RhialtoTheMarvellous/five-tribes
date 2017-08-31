@@ -1,274 +1,263 @@
-var sets = ["base", "artisans", "whims"];
-
-var tiles = {
-    base: [],
-    artisans: [],
-    whims: []
+var SETS = {
+    base: [
+        {
+            "name": "Large Market",
+            "value": "4",
+            "class": "large-market",
+            "color": "red"
+        },
+        {
+            "name": "Large Market",
+            "value": "4",
+            "class": "large-market",
+            "color": "red"
+        },
+        {
+            "name": "Large Market",
+            "value": "4",
+            "class": "large-market",
+            "color": "red"
+        },
+        {
+            "name": "Large Market",
+            "value": "4",
+            "class": "large-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Small Market",
+            "value": "6",
+            "class": "small-market",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Oasis",
+            "value": "8",
+            "class": "oasis",
+            "color": "red"
+        },
+        {
+            "name": "Village",
+            "value": "5",
+            "class": "village",
+            "color": "blue"
+        },
+        {
+            "name": "Village",
+            "value": "5",
+            "class": "village",
+            "color": "blue"
+        },
+        {
+            "name": "Village",
+            "value": "5",
+            "class": "village",
+            "color": "blue"
+        },
+        {
+            "name": "Village",
+            "value": "5",
+            "class": "village",
+            "color": "blue"
+        },
+        {
+            "name": "Village",
+            "value": "5",
+            "class": "village",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "6",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "6",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "6",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "6",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "10",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "12",
+            "class": "sacred-place",
+            "color": "blue"
+        },
+        {
+            "name": "Sacred Place",
+            "value": "15",
+            "class": "sacred-place",
+            "color": "blue"
+        }
+    ],
+    artisans: [
+        {
+            "name": "Workshop",
+            "value": "5",
+            "class": "workshop-nw",
+            "color": "blue"
+        },
+        {
+            "name": "Workshop",
+            "value": "5",
+            "class": "workshop-se",
+            "color": "blue"
+        },
+        {
+            "name": "Workshop",
+            "value": "5",
+            "class": "workshop-se",
+            "color": "blue"
+        },
+        {
+            "name": "Specialized Market",
+            "value": "10",
+            "class": "specialized-market",
+            "color": "red"
+        },
+        {
+            "name": "Specialized Market",
+            "value": "10",
+            "class": "specialized-market",
+            "color": "red"
+        },
+        {
+            "name": "Chasm",
+            "value": "",
+            "class": "chasm",
+            "color": ""
+        }
+    ],
+    whims: [
+        {
+            "name": "Fabulous City",
+            "value": "5+",
+            "class": "fabulous-city",
+            "color": "blue"
+        },
+        {
+            "name": "Fabulous City",
+            "value": "5+",
+            "class": "fabulous-city",
+            "color": "blue"
+        },
+        {
+            "name": "Fabulous City",
+            "value": "5+",
+            "class": "fabulous-city",
+            "color": "blue"
+        },
+        {
+            "name": "Fabulous City",
+            "value": "5+",
+            "class": "fabulous-city",
+            "color": "red"
+        },
+        {
+            "name": "Fabulous City",
+            "value": "5+",
+            "class": "fabulous-city",
+            "color": "red"
+        },
+        {
+            "name": "Great Lake",
+            "value": "",
+            "class": "great-lake",
+            "color": ""
+        }
+    ]
 };
-
-var baseTiles = [
-{
-    "name": "Large Market",
-    "value": "4",
-    "class": "large-market",
-    "color": "red"
-},
-{
-    "name": "Large Market",
-    "value": "4",
-    "class": "large-market",
-    "color": "red"
-},
-{
-    "name": "Large Market",
-    "value": "4",
-    "class": "large-market",
-    "color": "red"
-},
-{
-    "name": "Large Market",
-    "value": "4",
-    "class": "large-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Small Market",
-    "value": "6",
-    "class": "small-market",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Oasis",
-    "value": "8",
-    "class": "oasis",
-    "color": "red"
-},
-{
-    "name": "Village",
-    "value": "5",
-    "class": "village",
-    "color": "blue"
-},
-{
-    "name": "Village",
-    "value": "5",
-    "class": "village",
-    "color": "blue"
-},
-{
-    "name": "Village",
-    "value": "5",
-    "class": "village",
-    "color": "blue"
-},
-{
-    "name": "Village",
-    "value": "5",
-    "class": "village",
-    "color": "blue"
-},
-{
-    "name": "Village",
-    "value": "5",
-    "class": "village",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "6",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "6",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "6",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "6",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "10",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "12",
-    "class": "sacred-place",
-    "color": "blue"
-},
-{
-    "name": "Sacred Place",
-    "value": "15",
-    "class": "sacred-place",
-    "color": "blue"
-}
-];
-
-
-var artisansTiles = [
-{
-    "name": "Workshop",
-    "value": "5",
-    "class": "workshop-nw",
-    "color": "blue"
-},
-{
-    "name": "Workshop",
-    "value": "5",
-    "class": "workshop-se",
-    "color": "blue"
-},
-{
-    "name": "Workshop",
-    "value": "5",
-    "class": "workshop-se",
-    "color": "blue"
-},
-{
-    "name": "Specialized Market",
-    "value": "10",
-    "class": "specialized-market",
-    "color": "red"
-},
-{
-    "name": "Specialized Market",
-    "value": "10",
-    "class": "specialized-market",
-    "color": "red"
-},
-{
-    "name": "Chasm",
-    "value": "",
-    "class": "chasm",
-    "color": ""
-}
-];
-
-
-var whimsTiles = [
-{
-    "name": "Fabulous City",
-    "value": "5+",
-    "class": "fabulous-city",
-    "color": "blue"
-},
-{
-    "name": "Fabulous City",
-    "value": "5+",
-    "class": "fabulous-city",
-    "color": "blue"
-},
-{
-    "name": "Fabulous City",
-    "value": "5+",
-    "class": "fabulous-city",
-    "color": "blue"
-},
-{
-    "name": "Fabulous City",
-    "value": "5+",
-    "class": "fabulous-city",
-    "color": "red"
-},
-{
-    "name": "Fabulous City",
-    "value": "5+",
-    "class": "fabulous-city",
-    "color": "red"
-},
-{
-    "name": "Great Lake",
-    "value": "",
-    "class": "great-lake",
-    "color": ""
-},
-];
-
 
 
 /******************************************************************************/
@@ -293,7 +282,6 @@ function layout(a, h, w) {
         row = [];
         
         for (j = 0; j < w; j++) {
-            //row.push(a[(i * w) + j]);
             row.push(a.pop());
         }
         
@@ -303,11 +291,7 @@ function layout(a, h, w) {
     return board;
 }
 
-
 function layoutWithBorder(inner, border, h, w) {
-    console.log(inner.length);
-    console.log(border.length);
-
     var i, j;
     
     var board = [];
@@ -328,74 +312,91 @@ function layoutWithBorder(inner, border, h, w) {
         board.push(row);
     }
     
-    console.log(inner.length);
-    console.log(border.length);
-    
     return board;
 }
 
 
-
 function createTable(board) {
-  var table = document.createElement('table');
-  var tableBody = document.createElement('tbody');
+    var tableDiv = document.getElementById("div-board");
+    var table = document.createElement("table");
+    table.id = "table-board";
+    var tableBody = document.createElement("tbody");
 
-  board.forEach(function(rowData) {
-    var row = document.createElement('tr');
+    board.forEach(function(rowData) {
+        var row = document.createElement("tr");
 
-    rowData.forEach(function(tileData) {
-      var cell = document.createElement('td');
-      //cell.style.color = tileData["color"];
-      cell.className = tileData["class"] + " " + tileData["color"];
-      cell.title = tileData["name"];
-      cell.appendChild(document.createTextNode(tileData["value"]));
-      row.appendChild(cell);
+        rowData.forEach(function(tileData) {
+            var cell = document.createElement("td");
+            cell.className = tileData["class"] + " " + tileData["color"];
+            cell.title = tileData["name"];
+            cell.appendChild(document.createTextNode(tileData["value"]));
+            row.appendChild(cell);
+        });
+
+        tableBody.appendChild(row);
     });
 
-    tableBody.appendChild(row);
-  });
-
-  table.appendChild(tableBody);
-  document.body.appendChild(table);
+    table.appendChild(tableBody);
+    tableDiv.appendChild(table);
 }
 
 
-/* Base only: */
 
-/*shuffle(baseTiles);
-var board = layout(baseTiles, 5, 6);
-createTable(board);*/
+function generate() {
+    var artisans = document.getElementById("checkbox-artisans").checked;
+    var whims = document.getElementById("checkbox-whims").checked;
+    
+    var div = document.getElementById("div-board");
+    var oldTable = document.getElementById("table-board");
+    
+    if(oldTable) div.removeChild(oldTable);
+    
+    var board;
+    
+    if (!artisans && !whims) {
+        // Base only:
+        var tiles = SETS.base.slice();
+        shuffle(tiles);
+        board = layout(tiles, 5, 6);
+    }
+    else if (artisans && !whims) {
+        // Base + Artisans:
+        var baseTiles = SETS.base.slice();
+        shuffle(baseTiles);
+        
+        var central = SETS.artisans.slice().concat(baseTiles.slice(0,10));
+        var remainder = baseTiles.slice(10,30);
+
+        shuffle(central);
+        board = layoutWithBorder(central, remainder, 6, 6);
+    }
+    else if (!artisans && whims) {
+        // Base + Whims:
+        var tiles = SETS.base.concat(SETS.whims);
+        shuffle(tiles);
+        board = layout(tiles, 6, 6);
+    }
+    else if (artisans && whims) {
+        // Base + Artisans + Whims:
+        var baseAndWhims = SETS.base.concat(SETS.whims);
+        shuffle(baseAndWhims);
+
+        var central = SETS.artisans.slice().concat(baseAndWhims.slice(0,14));
+        var remainder = baseAndWhims.slice(14,36);
+
+        shuffle(central);
+        board = layoutWithBorder(central, remainder, 6, 7);
+    }
+    
+    createTable(board);
+}
 
 
-/* Base + Artisans: */
+var button = document.getElementById("button-generate");
 
-/*shuffle(baseTiles);
-
-var central = artisansTiles.slice().concat(baseTiles.slice(0,10));
-var remainder = baseTiles.slice(10,30);
-
-shuffle(central);
-var board = layoutWithBorder(central, remainder, 6, 6);
-createTable(board);*/
+button.onclick = generate;
 
 
-/* Base + Whims: */
-
-/*var tiles = baseTiles.concat(whimsTiles);
-shuffle(tiles);
-var board = layout(tiles, 6, 6);
-createTable(board);*/
 
 
-/* Base + Artisans + Whims: */
-
-var baseAndWhims = baseTiles.concat(whimsTiles);
-shuffle(baseAndWhims);
-
-var central = artisansTiles.slice().concat(baseAndWhims.slice(0,14));
-var remainder = baseAndWhims.slice(14,36);
-
-shuffle(central);
-var board = layoutWithBorder(central, remainder, 6, 7);
-createTable(board);
 
