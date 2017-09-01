@@ -291,6 +291,11 @@ function layout(a, h, w) {
     return board;
 }
 
+/*
+To generalise/future-proof this, consider passing in a predicate
+(viz. the "i % (h-1) === 0 || j % (w-1) === 0" below) which determines
+based on the indices i,j which list to take the next tile from ...
+*/
 function layoutWithBorder(inner, border, h, w) {
     var i, j;
     
